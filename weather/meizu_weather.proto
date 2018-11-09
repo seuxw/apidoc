@@ -1,0 +1,102 @@
+
+service Weather{
+    rpc ListWeather(ReqListWeather) returns RespListWeather{};
+}
+
+message ReqListWeather {
+    repeated string CityIds = 1;
+}
+
+message RespListWeather {
+    int64 code = 1;
+    string message = 2;
+    string redirect = 3;
+    repeated Value value = 4;
+}
+
+message Value {
+    repeated Alarm alarms = 1;
+    string city = 2;
+    int64 cityid = 3;
+    repeated Index indexes = 4;
+    PM25 pm25 = 5;
+    string provinceName = 6;
+    RealTime realtime = 7;
+    WeatherDetailInfo weatherDetailInfo = 8;
+    repeated Weather weathers = 9;
+}
+
+message Alarm {
+
+}
+
+message Index {
+    string abbreviation = 1;
+    string alias = 2;
+    string content = 3;
+    string level = 4;
+    string name = 5;
+}
+
+message PM25 {
+    string advice = 1;
+    string aqi = 2;
+    int64 citycount = 3;
+    int64 cityrank = 4;
+    string co = 5;
+    string color = 6;
+    string level = 7;
+    string no2 = 8;
+    string o3 = 9;
+    string pm10 = 10;
+    string pm25 = 11;
+    string quality = 12;
+    string so2 = 13;
+    string timestamp = 14;
+    string updateTime = 15;
+}
+
+message RealTime {
+    string img = 1;
+    string sb = 2;
+    string sendibleTemp = 3;
+    string temp = 4;
+    string time = 5;
+    string wD = 6;
+    string wS = 7;
+    string weather = 8;
+    string ziwaixian = 9;
+}
+
+message WeatherDetailInfo {
+    string publishTime = 1;
+    repeated Weather3HoursDetailsInfos weather3HoursDetailsInfos = 2;
+}
+
+message Weather3HoursDetailsInfos {
+    string endTime = 1;
+    string highestTemperature = 2;
+    string img = 3;
+    string isRainFail = 4;
+    string lowerestTemperature = 5;
+    string precipitation = 6;
+    string startTime = 7;
+    string wd = 8;
+    string ws = 9;
+    string weather = 10;
+}
+
+message Weather {
+    string date = 1;
+    string img = 2;
+    string sun_down_time = 3;
+    string sun_rise_time = 4;
+    string temp_day_c = 5;
+    string temp_day_f = 6;
+    string temp_night_c = 7;
+    string temp_night_f = 8;
+    string wd = 9;
+    string ws = 10;
+    string weather = 11;
+    string week = 12;
+}
