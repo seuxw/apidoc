@@ -2,7 +2,7 @@
 
 ## BasicInfo
 
-### Create User Handler
+### create_user Handler
 - url:
 http://localhost:20000/user/create_user
 - method: `POST`
@@ -34,3 +34,37 @@ data = {
 requests.post("http://0.0.0.0:20000/user/create_user", data=data)
 ```
 
+### get_user_by_uuid Handler
+- url:
+http://localhost:20000/user/get_user_by_uuid
+- method: `GET`, `POST`
+- params:
+    - [x] uuid: 用户 UUID
+- returns:
+```json
+{
+    "code": 0,
+    "data": {
+        "card_id": 213141003,
+        "wechat_id": 0,
+        "stu_no": "",
+        "real_name": "",
+        "nick_name": "",
+        "gender": 0,
+        "user_type": 0,
+        "identity": 1,
+        "class": "",
+        "dept_name": "",
+        "major_name": "",
+        "grade": 14,
+        "qq_id": 111111111,
+        "vip": 0,
+        "vip_level": 0,
+        "rmk_name": "",
+        "hometown": "",
+        "address": "",
+        "birthday": ""
+    },
+    "message": ""
+}
+```
